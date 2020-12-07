@@ -18,11 +18,11 @@ app.use("/static/assets", estatic(join(__dirname, "../../public/assets")))
 app.use("/static/script", estatic(join(__dirname, "../../public/dist")))
 
 app.get("/", function (req, res, next) {
-    res.sendFile(join(__dirname, "../../public/index.html"))
+  res.sendFile(join(__dirname, "../../public/index.html"))
 })
 
 app.get("/favicon.ico", (req, res) => {
-    res.sendFile(join(__dirname, "../../public/assets/favicon.ico"))
+  res.sendFile(join(__dirname, "../../public/assets/favicon.ico"))
 })
 
 app.use("/js", devMiddleware)
