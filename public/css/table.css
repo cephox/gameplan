@@ -1,0 +1,15 @@
+.table table tr td {
+    width: 10em;
+    text-align: center;
+}
+
+.table table tr td input {
+    font-family: "Roboto";
+    border: none;
+    border-bottom: 0.125rem solid #aaa;
+    width: 100%;
+    height: 2rem;
+    font-size: 1.0625rem;
+    line-height: 147.6%;
+    text-align: center;
+}

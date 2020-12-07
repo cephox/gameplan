@@ -1,7 +1,7 @@
 import { addTable } from "./table"
 
 async function init() {
-    addTable(10, 5);
+    addTable(3, 5);
 }
 
 window.onload = init
