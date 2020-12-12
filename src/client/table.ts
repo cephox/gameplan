@@ -1,5 +1,16 @@
 import { append_element } from "./activity"
 import { createInput } from "./inputs"
+import { update_ranklist } from "./ranklist"
+
+export function get_team_name(team:number) {
+    var input = <HTMLInputElement>document.getElementById("team-name-" + team)
+    return input.value
+}
+
+export function get_team_score(team:number): number {
+    var whole_points = <HTMLInputElement>document.getElementById("whole-team-score-" + team)
+    return parseInt(whole_points.value);
+}
 
 function updateTable(team:number) {
     var inputs = document.getElementsByClassName("team-score-" + team)
@@ -11,6 +22,8 @@ function updateTable(team:number) {
     
     var whole_points = <HTMLInputElement>document.getElementById("whole-team-score-" + team)
     whole_points.value = k + ""
+
+    update_ranklist();
 }
 
 function createTable(teams:number, rounds:number): HTMLElement {
@@ -26,7 +39,7 @@ function createTable(teams:number, rounds:number): HTMLElement {
             var entry = document.createElement("td");
 
             if(j == 0 && i != 0) {
-                var input = createInput("text", "team-name", "Team " + i, () => {})
+                var input = createInput("text", "team-name", "Team " + i, () => {update_ranklist();})
                 input.element.id = "team-name-" + i
                 entry.appendChild(input.element)
             } else if(i == 0 && j == rounds + 1) {
@@ -57,6 +70,6 @@ function createTable(teams:number, rounds:number): HTMLElement {
     return div
 }
 
-export function addTable(width:number, height:number) {
-    append_element(createTable(width, height))
+export function addTable(teams:number, rounds:number) {
+    append_element(createTable(teams, rounds))
 }
