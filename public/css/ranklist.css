@@ -6,7 +6,7 @@
 .ranklist-header-team,
 .ranklist-header-score {
     float: left;
-    width: 10%;
+    width: 20%;
     text-align: center;
     background-color: rgb(40, 139, 0);
     border: 1px solid black;
@@ -28,7 +28,7 @@
 .ranklist-name,
 .ranklist-score {
     float: left;
-    width: 10%;
+    width: 20%;
     text-align: center;
 }
 

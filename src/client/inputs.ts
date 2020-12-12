@@ -16,7 +16,7 @@ export function createInput(type:inputType, clazz:string, value:any, onchange: (
 
     if(type == "number") {
         input.onkeypress = (ev) => {
-            if (!ev.code.startsWith("Digit") && !ev.code.startsWith("Numpad") && !ev.code.startsWith("Slash")) {
+            if (!ev.code.startsWith("Digit") && !ev.code.startsWith("Numpad") && !ev.code.startsWith("Slash") && !ev.code.startsWith("Enter")) {
                 ev.preventDefault()
             }
 

@@ -47,14 +47,15 @@ export function create_gameplan(plan:Array<Array<string>>): HTMLElement {
 }
 
 export function update_plan() {
-    var ranklist = document.getElementById("ranklist")
-    var team_amount = ranklist!.children[1].children.length
+    var team_amount = document.getElementsByClassName("table")[0].children[0].children.length - 1
+
     var plan = <HTMLDivElement>document.getElementsByClassName("gameplan-table")[0]
     var gameplan = gen_plan(team_amount)
-    
+    console.log(gameplan)
     for(var i = 0; i < plan.children.length; i++) {
-        for(var j = 0; j < plan.children[0].children.length; j++) {
+        for(var j = 0; j < plan.children[0].children.length - 1; j++) {
             var el = <HTMLTableDataCellElement>document.getElementById("gameplan-round-" + i + "-game-" + j)
+            console.log(i + " " + j)
             var data = gameplan![i][j]
 
             for(var team_index = 0; team_index < team_amount; team_index++) {
