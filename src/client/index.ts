@@ -4,8 +4,10 @@ import { append_element } from "./activity"
 import { create_gameplan, gen_plan } from "./plan"
 
 async function init() {
-    
-    var teams = parseInt(prompt("Teamzahl")!)
+    var teams = 0
+    while(teams == 0 || teams + "" == "NaN" || teams % 2 != 0) {
+        teams = parseInt(prompt("Teamanzahl (muss gerade sein; Mindestwert: 2)")!)
+    }
 
     var plan = gen_plan(teams)
     addTable(teams, plan!.length);
