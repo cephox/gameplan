@@ -1,0 +1,11 @@
+#gameplan {
+    margin-top: 3em;
+    margin-left: 1em;
+}
+
+.gameplan-table-row {
+    padding-top: 1.5em;
+    float: left;
+    width: 15%;
+    text-align: center;
+}

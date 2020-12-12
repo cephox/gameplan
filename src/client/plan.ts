@@ -3,26 +3,27 @@ import { get_team_name } from "./table"
 export function create_gameplan(plan:Array<Array<string>>): HTMLElement {
     
     var ranklist = document.getElementById("ranklist")
-    var team_amount = ranklist!.children.length - 1
+    var team_amount = ranklist!.children[1].children.length
 
     var div = document.createElement("div")
     div.id = "gameplan"
     
-    var table = document.createElement("table")
+    var table = document.createElement("div")
     table.classList.add("gameplan-table")
 
     for(var i = 0; i < plan.length; i++) {
-        var row = document.createElement("tr")
+        var row = document.createElement("div")
         row.classList.add("gameplan-table-row")
         row.id = "gameplan-round-" + i
         
-        var round_label = document.createElement("span")
+        var round_label = document.createElement("div")
+        round_label.classList.add("gameplan-round-el")
         round_label.innerHTML = "Runde " + (i + 1)
 
         row.appendChild(round_label)
 
-        for(var j = 0; j < plan[i].length; j++) {
-            var el = document.createElement("td")
+        for(var j = 0; j < plan[i].length; j++) {    
+            var el = document.createElement("div")
             el.classList.add("gameplan-round-el")
             el.id = "gameplan-round-" + i + "-game-" + j
 
@@ -34,6 +35,7 @@ export function create_gameplan(plan:Array<Array<string>>): HTMLElement {
 
             el.innerHTML = data
             row.appendChild(el)
+
         }
 
         table.appendChild(row)
@@ -46,7 +48,7 @@ export function create_gameplan(plan:Array<Array<string>>): HTMLElement {
 
 export function update_plan() {
     var ranklist = document.getElementById("ranklist")
-    var team_amount = ranklist!.children.length - 1
+    var team_amount = ranklist!.children[1].children.length
     var plan = <HTMLDivElement>document.getElementsByClassName("gameplan-table")[0]
     var gameplan = gen_plan(team_amount)
     

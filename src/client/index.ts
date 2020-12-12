@@ -4,9 +4,12 @@ import { append_element } from "./activity"
 import { create_gameplan, gen_plan } from "./plan"
 
 async function init() {
-    var plan = gen_plan(4)
-    addTable(4, plan!.length);
-    append_element(create_ranklist(4));
+    
+    var teams = parseInt(prompt("Teamzahl")!)
+
+    var plan = gen_plan(teams)
+    addTable(teams, plan!.length);
+    append_element(create_ranklist(teams));
     append_element(create_gameplan(plan!));
 }
 

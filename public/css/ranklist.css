@@ -1,0 +1,42 @@
+#ranklist {
+    margin-top: 2em;
+    margin-left: 1em;
+}
+
+.ranklist-header-team,
+.ranklist-header-score {
+    float: left;
+    width: 10%;
+    text-align: center;
+    background-color: rgb(40, 139, 0);
+    border: 1px solid black;
+    font-weight: 700;
+}
+
+.ranklist-header-team {
+    border-right: none;
+}
+
+.ranklist-content {
+    padding-top: 1em;
+}
+
+.ranklist-place {
+    padding-top: 1.5em;
+}
+
+.ranklist-name,
+.ranklist-score {
+    float: left;
+    width: 10%;
+    text-align: center;
+}
+
+#ranklist-place-0 {
+    font-weight: 900;
+}
+
+#ranklist-place-1 {
+    font-weight: 600;
+}
+
