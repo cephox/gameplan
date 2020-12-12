@@ -1,6 +1,7 @@
 import { append_element } from "./activity"
 import { createInput } from "./inputs"
 import { update_ranklist } from "./ranklist"
+import { update_plan } from "./plan"
 
 export function get_team_name(team:number) {
     var input = <HTMLInputElement>document.getElementById("team-name-" + team)
@@ -29,7 +30,7 @@ function updateTable(team:number) {
 function createTable(teams:number, rounds:number): HTMLElement {
     var div = document.createElement("div")
     div.classList.add("table")
-
+    
     var table = document.createElement("table")
 
     for(var i = 0; i < teams + 1; i++) {
@@ -39,7 +40,7 @@ function createTable(teams:number, rounds:number): HTMLElement {
             var entry = document.createElement("td");
 
             if(j == 0 && i != 0) {
-                var input = createInput("text", "team-name", "Team " + i, () => {update_ranklist();})
+                var input = createInput("text", "team-name", "Team " + i, () => {update_ranklist(); update_plan();})
                 input.element.id = "team-name-" + i
                 entry.appendChild(input.element)
             } else if(i == 0 && j == rounds + 1) {
