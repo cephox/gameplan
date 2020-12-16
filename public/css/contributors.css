@@ -1,0 +1,14 @@
+#contributors {
+    background-color: transparent;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+
+#contributors div {
+    float: right;
+    margin: 0 1em 1em 0;
+    background-color: transparent;
+    font-size: small;
+}
